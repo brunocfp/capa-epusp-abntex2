@@ -1,0 +1,98 @@
+%%
+%% Customizações do abnTeX2 (http://abnTeX2.googlecode.com) para a Escola Politecnica da Universidade de Sao Paulo
+%%
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%   http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2005/12/01 or later.
+%%
+%% This work has the LPPL maintenance status `maintained'.
+%% 
+%% The Current Maintainer of this work is Bruno Fernandes, brunocfp@usp.br
+%%
+%% Further information about abnTeX2 are available on http://abntex2.googlecode.com/
+%%
+
+% Customizacões feitas por Bruno Fernandes
+% Dicas:
+% -> Não se esqueçam de colocar o \caption{} das tabelas e das figuras no início, antes da inserção do objeto.
+% -> Para adicionar as fontes embaixo das figuras use o comando \legend{}.
+%     Ex.: \legend{Fonte: o autor}
+% -> A área de concentração pode ser inserida com o comando \areaconcentracao{} no arquivo topo do latex.
+%    Ex.: \areaconcentracao{Engenharia Elétrica - Sistemas Eletrônicos}
+
+% ---
+% INICIO DAS CUSTOMIZACOES PARA A ESCOLA POLITECNICA DA USP
+% ---
+
+% Comandos de dados - Area de Concentracao
+\newcommand{\areaname}{Área de Concentração:}
+
+\providecommand{\imprimirAreaConcentracaoRotulo}{}
+\providecommand{\imprimirAreaConcentracao}{}
+\newcommand{\areaconcentracao}[2][\areaname]%
+  {\renewcommand{\imprimirAreaConcentracaoRotulo}{#1}%
+   \renewcommand{\imprimirAreaConcentracao}{#2}}
+
+% alterando a capa
+\renewcommand{\imprimircapa}{%
+  \begin{capa}%
+    \center
+		
+    {\ABNTEXchapterfont\imprimirautor} \\[8.5cm]
+
+    %\vfill
+    {\ABNTEXchapterfont\bfseries\Large\imprimirtitulo}
+    \vfill
+    
+    \imprimirlocal \\
+		\imprimirdata
+
+  \end{capa}
+}
+
+% folha de rosto 
+
+\makeatletter
+
+\renewcommand{\folhaderostocontent}{
+	\begin{center}
+	\center
+		
+	{\ABNTEXchapterfont\imprimirautor} \\[8.5cm]
+
+	{\ABNTEXchapterfont\bfseries\Large\imprimirtitulo}
+	\vfill
+	
+	\abntex@ifnotempty{\imprimirpreambulo}{%
+		\hspace{.45\textwidth}
+		\begin{minipage}{.5\textwidth}
+		\SingleSpacing
+
+		\imprimirpreambulo \\ \\
+
+		{\imprimirAreaConcentracaoRotulo \\ \imprimirAreaConcentracao} \\ \\
+
+		{\imprimirorientadorRotulo~\imprimirorientador}
+
+		\abntex@ifnotempty{\imprimircoorientador}{%
+		{\imprimircoorientadorRotulo~\imprimircoorientador}%
+		}%
+		\end{minipage}%
+		\vspace*{\fill}
+	}%
+	
+	\imprimirlocal \\
+	\imprimirdata
+	
+	\end{center}
+}
+
+\makeatother
+
+% ---
+% FIM DAS CUSTOMIZACOES PARA A ESCOLA POLITECNICA DA USP
+% ---
