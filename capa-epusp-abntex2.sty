@@ -21,8 +21,11 @@
 % -> Não se esqueçam de colocar o \caption{} das tabelas e das figuras no início, antes da inserção do objeto.
 % -> Para adicionar as fontes embaixo das figuras use o comando \legend{}.
 %     Ex.: \legend{Fonte: o autor}
-% -> A área de concentração pode ser inserida com o comando \areaconcentracao{} no arquivo topo do latex.
+% -> A área de concentração pode ser inserida com o comando \areaconcentracao{}.
 %    Ex.: \areaconcentracao{Engenharia Elétrica - Sistemas Eletrônicos}
+
+% Última modificação: 24/08/16
+% Motivo: Remoção de warnings.
 
 % ---
 % INICIO DAS CUSTOMIZACOES PARA A ESCOLA POLITECNICA DA USP
@@ -42,13 +45,15 @@
   \begin{capa}%
     \center
 		
-    {\ABNTEXchapterfont\imprimirautor} \\[8.5cm]
+    {\ABNTEXchapterfont\imprimirautor}
+		\vspace*{8.5cm}
 
     %\vfill
     {\ABNTEXchapterfont\bfseries\Large\imprimirtitulo}
     \vfill
     
-    \imprimirlocal \\
+    \imprimirlocal
+		\par
 		\imprimirdata
 
   \end{capa}
@@ -60,33 +65,37 @@
 
 \renewcommand{\folhaderostocontent}{
 	\begin{center}
-	\center
+		\center
+			
+		{\ABNTEXchapterfont\imprimirautor}
+		\vspace*{8.5cm}
+
+		{\ABNTEXchapterfont\bfseries\Large\imprimirtitulo}
+		\vfill
 		
-	{\ABNTEXchapterfont\imprimirautor} \\[8.5cm]
+		\abntex@ifnotempty{\imprimirpreambulo}{%
+			\hspace{.45\textwidth}
+			\begin{minipage}{.5\textwidth}
+				\SingleSpacing
 
-	{\ABNTEXchapterfont\bfseries\Large\imprimirtitulo}
-	\vfill
-	
-	\abntex@ifnotempty{\imprimirpreambulo}{%
-		\hspace{.45\textwidth}
-		\begin{minipage}{.5\textwidth}
-		\SingleSpacing
+				\imprimirpreambulo
+				\par
+				\vspace*{2\baselineskip}
+				{\imprimirAreaConcentracaoRotulo \par \imprimirAreaConcentracao}
+				\par
+				\vspace{2\baselineskip}
+				{\imprimirorientadorRotulo~\imprimirorientador}
 
-		\imprimirpreambulo \\ \\
-
-		{\imprimirAreaConcentracaoRotulo \\ \imprimirAreaConcentracao} \\ \\
-
-		{\imprimirorientadorRotulo~\imprimirorientador}
-
-		\abntex@ifnotempty{\imprimircoorientador}{%
-		{\imprimircoorientadorRotulo~\imprimircoorientador}%
+				\abntex@ifnotempty{\imprimircoorientador}{%
+				{\imprimircoorientadorRotulo~\imprimircoorientador}%
+				}%
+			\end{minipage}%
+			\vspace*{\fill}
 		}%
-		\end{minipage}%
-		\vspace*{\fill}
-	}%
 	
-	\imprimirlocal \\
-	\imprimirdata
+		\imprimirlocal
+		\par
+		\imprimirdata
 	
 	\end{center}
 }
