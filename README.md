@@ -32,7 +32,7 @@ Dicas para elaboração do trabalho:
 
 - A área de concentração e o tipo de trabalho podem ser inseridos com os comandos "\areaconcentracao{}" e "\tipotrabalho{}", respectivamente:
 
-        	Ex.: \areaconcentracao{Engenharia Elétrica - Sistemas Eletrônicos}
+		Ex.: \areaconcentracao{Engenharia Elétrica - Sistemas Eletrônicos}
 		Ex.: \tipotrabalho{Dissertação}
 
 - O seguinte comando pode ser utilizado para evitar quebra de notas de rodapé entre páginas:
