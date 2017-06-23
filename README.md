@@ -5,7 +5,7 @@ Customizações do abntex2 (capa e folha de rosto) para monografias (trabalhos d
 
 Para utilizar, copie o arquivo capa-epusp-abntex2.sty para a pasta do seu projeto e adicione \usepackage{capa-epusp-abntex2} ao seu arquivo latex.
 
-Última modificação: 24/08/16
+Última modificação: 24/08/16.
 Motivo: Remoção de warnings.
 
 Dicas para elaboração do trabalho:
@@ -30,7 +30,7 @@ Dicas para elaboração do trabalho:
 		\label{fig:dados_ensaio}
 	\end{figure}
 
-- A área de concentração e o tipo de trabalho podem ser inseridos com o comando "\areaconcentracao{}" e "\tipotrabalho{}", respectivamente:
+- A área de concentração e o tipo de trabalho podem ser inseridos com os comandos "\areaconcentracao{}" e "\tipotrabalho{}", respectivamente:
 
         Ex.: \areaconcentracao{Engenharia Elétrica - Sistemas Eletrônicos}
 	Ex.: \tipotrabalho{Dissertação}
