@@ -20,15 +20,15 @@ Dicas para elaboração do trabalho:
 
 - Exemplo de inserção de figura (notar a posição do \caption{} e do \legend{}):
 
-        \begin{figure}[!ht]
-		\centering
-		\caption{Resposta ao degrau da planta.}
-		\setlength\fboxsep{1.1pt}
-		\setlength\fboxrule{0.3pt}
-		\fbox{\includegraphics[width=\hboxtextwidth]{Figuras/dados_ensaio.png}}
-		\legend{Fonte: Autor.}
-		\label{fig:dados_ensaio}
-	\end{figure}
+		\begin{figure}[!ht]
+			\centering
+			\caption{Resposta ao degrau da planta.}
+			\setlength\fboxsep{1.1pt}
+			\setlength\fboxrule{0.3pt}
+			\fbox{\includegraphics[width=\hboxtextwidth]{Figuras/dados_ensaio.png}}
+			\legend{Fonte: Autor.}
+			\label{fig:dados_ensaio}
+		\end{figure}
 
 - A área de concentração e o tipo de trabalho podem ser inseridos com os comandos "\areaconcentracao{}" e "\tipotrabalho{}", respectivamente:
 
