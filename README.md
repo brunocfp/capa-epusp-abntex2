@@ -58,4 +58,7 @@ OBS: Neste caso, o parágrafo inteiro é jogado para a próxima página.
 
 - Salve todos os arquivos do projeto com a codificação UTF8!
 
+- Dúvidas: brunocfp@gmail.com
+
 Bom trabalho!
+Bruno Fernandes
