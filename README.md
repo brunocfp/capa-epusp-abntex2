@@ -5,10 +5,17 @@ Customizações do abntex2 (capa e folha de rosto) para monografias (trabalhos d
 
 Para utilizar, copie o arquivo capa-epusp-abntex2.sty para a pasta do seu projeto e adicione \usepackage{capa-epusp-abntex2} ao seu arquivo latex.
 
-Última modificação: 24/08/16.
-Motivo: Remoção de warnings.
+Última modificação: 26/06/17
+- Inclusão do comando "\imprimirfalsafolhaderosto" para impressão da falsa folha de rosto;
+- Remoção de "warnings".
+
 
 Dicas para elaboração do trabalho:
+
+- A falsa folha de rosto, se necessária, deve ser inserida entre a capa e a folha de rosto, por meio do comando \imprimirfalsafolhaderosto.
+	Ex.: 	\imprimircapa
+		\imprimirfalsafolhaderosto
+		\imprimirfolhaderosto
 
 - Não se esqueçam de colocar o \caption{} das tabelas e das figuras no início, antes da inserção do objeto. Deste modo o título ficará acima das ilustrações (figura, tabela, gráfico...), como pede as diretrizes da Escola Politécnica da USP.
 
