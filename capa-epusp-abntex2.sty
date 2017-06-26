@@ -23,9 +23,12 @@
 %     Ex.: \legend{Fonte: o autor}
 % -> A área de concentração pode ser inserida com o comando \areaconcentracao{}.
 %    Ex.: \areaconcentracao{Engenharia Elétrica - Sistemas Eletrônicos}
+% -> A folha de rosto, se necessária, deve ser inserida entre a capa e a folha de rosto.
+%    Ex.: \imprimircapa \imprimirfalsafolhaderosto \imprimirfolhaderosto
 
-% Última modificação: 24/08/16
-% Motivo: Remoção de warnings.
+% Última modificação: 25/06/17
+% - Inclusão do comando "\imprimirfalsafolhaderosto" para impressão da falsa folha de rosto;
+% - Remoção de "warnings".
 
 % ---
 % INICIO DAS CUSTOMIZACOES PARA A ESCOLA POLITECNICA DA USP
@@ -46,15 +49,15 @@
     \center
 		
     {\ABNTEXchapterfont\imprimirautor}
-		\vspace*{8.5cm}
+	\vspace*{\dimexpr 9cm - 12pt\relax}
 
     %\vfill
     {\ABNTEXchapterfont\bfseries\Large\imprimirtitulo}
     \vfill
     
     \imprimirlocal
-		\par
-		\imprimirdata
+	\par
+	\imprimirdata
 
   \end{capa}
 }
@@ -68,7 +71,7 @@
 		\center
 			
 		{\ABNTEXchapterfont\imprimirautor}
-		\vspace*{8.5cm}
+		\vspace*{\dimexpr 9cm - 12pt\relax}
 
 		{\ABNTEXchapterfont\bfseries\Large\imprimirtitulo}
 		\vfill
@@ -98,6 +101,57 @@
 		\imprimirdata
 	
 	\end{center}
+}
+
+\makeatother
+
+% falsa folha de rosto 
+
+\makeatletter
+
+\newcommand{\falsafolhaderostocontent}{
+	\begin{center}
+		\center
+			
+		{\ABNTEXchapterfont\imprimirautor}
+		\vspace*{\dimexpr 9cm - 12pt\relax}
+
+		{\ABNTEXchapterfont\bfseries\Large\imprimirtitulo}
+		\vfill
+		
+		\abntex@ifnotempty{\imprimirpreambulo}{%
+			\hspace{.45\textwidth}
+			\begin{minipage}{.5\textwidth}
+				\SingleSpacing
+
+				\imprimirpreambulo
+				\par
+				\vspace*{2\baselineskip}
+				{\phantom{\imprimirAreaConcentracaoRotulo} \par \phantom{\imprimirAreaConcentracao}}
+				\par
+				\vspace{2\baselineskip}
+				{\phantom{\imprimirorientadorRotulo}~\phantom{\imprimirorientador}}
+
+				\abntex@ifnotempty{\imprimircoorientador}{%
+				{\phantom{\imprimircoorientadorRotulo}~\phantom{\imprimircoorientador}}%
+				}%
+			\end{minipage}%
+			\vspace*{\fill}
+		}%
+	
+		\imprimirlocal
+		\par
+		\imprimirdata
+	
+	\end{center}
+}
+
+\newcommand{\falsafolhaderostoname}{Falsa folha de rosto}
+\newenvironment{falsafolhaderosto}[1][\falsafolhaderostoname]{\clearpage\PRIVATEbookmarkthis{#1}}{\cleardoublepage}
+\newcommand{\imprimirfalsafolhaderosto}[1][\falsafolhaderostoname]{%
+	\begin{falsafolhaderosto}
+		\falsafolhaderostocontent
+	\end{falsafolhaderosto}
 }
 
 \makeatother
