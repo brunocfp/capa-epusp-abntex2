@@ -8,7 +8,7 @@ Para utilizar, copie o arquivo capa-epusp-abntex2.sty para a pasta do seu projet
 Última modificação: 13/10/17
 - Inclusão do comando "\imprimirfalsafolhaderosto" para impressão da falsa folha de rosto;
 - Remoção de "warnings".
-- Correção para traduzir o comando "\areaname" de acordo com a linguagem em uso (créditos: Vitor Finotti Ferreira).
+- Correção para traduzir o comando "\areaconcentracao{}" de acordo com o idioma em uso (créditos: Vitor Finotti Ferreira).
 
 
 Dicas para elaboração do trabalho:
