@@ -5,9 +5,10 @@ Customizações do abntex2 (capa e folha de rosto) para monografias (trabalhos d
 
 Para utilizar, copie o arquivo capa-epusp-abntex2.sty para a pasta do seu projeto e adicione \usepackage{capa-epusp-abntex2} ao seu arquivo latex.
 
-Última modificação: 26/06/17
+Última modificação: 13/10/17
 - Inclusão do comando "\imprimirfalsafolhaderosto" para impressão da falsa folha de rosto;
 - Remoção de "warnings".
+- Correção para traduzir o comando "\areaname" de acordo com a linguagem em uso (créditos: Vitor Finotti Ferreira).
 
 
 Dicas para elaboração do trabalho:
@@ -41,6 +42,8 @@ Dicas para elaboração do trabalho:
 
 		Ex.: \areaconcentracao{Engenharia Elétrica - Sistemas Eletrônicos}
 		Ex.: \tipotrabalho{Dissertação}
+		
+OBS: O label inserido pelo comando "\areaconcentracao{}" é traduzido automaticamente de acordo com o idioma em uso no projeto (créditos: Vitor Finotti Ferreira).
 
 - O seguinte comando pode ser utilizado para evitar quebra de notas de rodapé entre páginas:
 	
