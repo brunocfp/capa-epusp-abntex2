@@ -39,7 +39,13 @@
 % ---
 
 % Comandos de dados - Area de Concentracao
-\newcommand{\areaname}{Área de Concentração:}
+\newcommand{\areaname}{%
+  \iflanguage{brazil}{Área de Concentração:}{%
+    \iflanguage{spanish}{Área de Concentración:}{%
+      \iflanguage{english}{Area of Concentration:}{Area of Concentration:}
+    }%
+  }%
+}%
 
 \providecommand{\imprimirAreaConcentracaoRotulo}{}
 \providecommand{\imprimirAreaConcentracao}{}
